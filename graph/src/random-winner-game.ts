@@ -57,4 +57,4 @@ export function handleGameStarted(event: GameStarted): void {
   entity.save();
 }
 
-expo
+export function handleOwnershipTransferred(event: OwnershipTransferred): void {}
