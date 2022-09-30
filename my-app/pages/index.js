@@ -281,7 +281,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Random Winner Game</title>
+        <title>Lottery Game</title>
         <meta name="description" content="LW3Punks-Dapp" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
