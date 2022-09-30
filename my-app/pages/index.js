@@ -38,7 +38,7 @@ export default function Home() {
 
 
   const getProviderOrSigner = async (needSigner = false) => {
-    const provider = await web3ModalRef.Web3ModalProvider(provider);
+    const provider = await web3ModalRef.current.connect();
     const web3Provider = new providers.Web3Provider(provider);
 
     const { chainId } = await web3Provider.getNetwork();
@@ -196,9 +196,7 @@ export default function Home() {
         provider
       );
       const _owner = await randomGameNFTContract.owner();
-      // We will get the signer now to extract the address of the currently connected MetaMask account
       const signer = await getProviderOrSigner(true);
-      // Get the address associated to the signer which is connected to  MetaMask
       const address = await signer.getAddress();
       if (address.toLowerCase() === _owner.toLowerCase()) {
         setIsOwner(true);
@@ -307,7 +305,7 @@ export default function Home() {
         </div>
       </div>
 
-      <footer className={styles.footer}>Made with &#10084; by Your Name</footer>
+      <footer className={styles.footer}>Made with &#10084; by Elo</footer>
     </div>
   );
 }
